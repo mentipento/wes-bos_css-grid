@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Website with Grid</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="nav__wrapper">
+          <img src="images/logo.png" alt="logo" class="nav__logo">
+          <button class="nav__burger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navigation">
+            ☰
+          </button>
+        </div>
+        <ul class="nav__list nav__list--inactive" id="navigation">
+          <li class="nav__item"><a href="#" class="nav__link">Tacos</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Beers</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Wines</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Desserts</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Reservations</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <section class="hero">
+        <div class="hero__image">
+          <h1 class="hero__headline">Ben's Tacos</h1>
+          <p class="hero__subheadline">Just eat them</p>
+        </div>
+        <div class="hero__ad">
+          <p class="hero__price">$1.99</p>
+          <p class="hero__food">Tacos</p>
+        </div>
+        <div class="hero__ad">
+          <p class="hero__price">$3.99</p>
+          <p class="hero__food">Kombucha</p>
+        </div>
+      </section>
+    </div>
+    <div class="container">
+      <section class="main">
+        <div class="main__box">
+          <p class="main__emoji">🌮</p>
+          <p class="main__headline">Tacos</p>
+          <p class="main__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, assumenda.</p>
+        </div>
+        <div class="main__box">
+          <p class="main__emoji">🍺</p>
+          <p class="main__headline">Beer</p>
+          <p class="main__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, assumenda.</p>
+        </div>
+        <div class="main__box">
+          <p class="main__emoji">🍷</p>
+          <p class="main__headline">Wine</p>
+          <p class="main__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, assumenda.</p>
+        </div>
+        <div class="main__box">
+          <p class="main__emoji">🎵</p>
+          <p class="main__headline">Music</p>
+          <p class="main__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, assumenda.</p>
+        </div>
+        <div class="main__featured">
+          <img class="main__taco" src="images/queso-taco.png" alt="queso taco">
+          <div class="main__text-wrap">
+            <p class="main__headline">Featured Taco</p>
+            <p>Slim Profile, easy to hold and loaded with cheese.</p>
+            <p>This is the one you have been waiting for</p>
+            <button class="main__button">
+              Learn More →
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="container">
+      <section class="footer">
+        <p class="footer__copyright">© <span id="year"></span> Ben's Tacos</p>
+        <a class="footer__link" href="#">Contact</a>
+        <a class="footer__link" href="#">Imprint</a>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hintergrund -->
+  <rect width="100%" height="100%" fill="#fdf5e6"/>
+
+  <!-- Taco-Umriss -->
+  <path d="M90 100 Q110 70 150 80 Q190 90 210 120 Q170 110 130 110 Q110 110 90 100 Z"
+        fill="none" stroke="#000" stroke-width="4"/>
+
+  <!-- Füllung Wellen -->
+  <path d="M95 95 Q100 85 110 90 T130 90 T150 95 T170 90 T190 95"
+        fill="none" stroke="#000" stroke-width="2"/>
+
+  <!-- Taco-Schale Punkte -->
+  <circle cx="120" cy="92" r="2" fill="#000"/>
+  <circle cx="135" cy="86" r="2" fill="#000"/>
+  <circle cx="155" cy="90" r="2" fill="#000"/>
+
+  <!-- Text -->
+  <text x="60" y="160" font-family="Arial, sans-serif" font-size="28" fill="#000" font-weight="bold">Ben's Tacos</text>
+</svg>

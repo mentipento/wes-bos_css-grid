@@ -1,0 +1,258 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+img {
+  max-width: 100%;
+}
+
+a:hover {
+  opacity: 70%;
+}
+
+:root {
+  --yellow: #FCC402;
+}
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.woff2') format('woff2 supports variations'),
+         url('fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.woff2') format('woff2-variations');
+    font-weight: 200 800;
+    font-display: swap;
+    font-style: normal;
+}
+
+body {
+  font-family: 'Bricolage Grotesque';
+  background-image:
+    url(images/topography.svg),
+    linear-gradient(110deg, #f93d66, #6d47d9);    
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.nav__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "logo burger";
+  background-color: var(--yellow);
+  box-shadow: 2px 2px 2px;
+  margin-bottom: 0.25em;
+}
+
+.nav__logo {
+  justify-self: start;
+  width: 60px;
+}
+
+.nav__burger {
+  grid-area: burger;
+  justify-self: end;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.nav__list {
+  grid-area: nav;
+  grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.25em;
+  background-color: transparent;
+  perspective: 500px;
+}
+
+.nav__list--inactive {
+ max-height: 0 ;
+}
+
+.nav__item {
+  background-color: var(--yellow);
+  text-align: center;
+  box-shadow: 2px 2px 2px;
+  padding: .125em 1em;
+  max-height: 0px;
+  overflow: hidden;
+  transform: rotateX(90deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.nav__item--active {
+  display: grid;
+  max-height: 500px;
+  transform: rotateX(0);
+}
+
+.nav__link {
+  color: black;
+  text-decoration: none;
+}
+
+.hero {
+  display: grid;
+  gap: .5em;
+}
+
+.hero__image {
+  background-image: url(images/taco.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top right;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 1em;
+  gap: 0.25em;
+    box-shadow: 2px 2px 2px;
+}
+
+
+
+.hero__headline {
+  background-color: var(--yellow);
+  margin: 0;
+}
+
+.hero__subheadline {
+  background-color: var(--yellow);
+  margin: 0;
+}
+
+.hero__ad {
+  display: grid;
+  gap: .125em;
+  background-color: var(--yellow);
+  justify-items: center;
+  align-content: center;
+  padding: 1em;
+    box-shadow: 2px 2px 2px;
+}
+
+.hero__price {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.hero__food {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: grid;
+  gap: 2em;
+}
+
+.main__box {
+  border: 2px solid white;
+  box-shadow: 2px 2px 2px;
+}
+
+.main__emoji {
+  text-align: center;
+  font-size: 3em;
+  margin: 0;
+  padding: .125em;
+  background-color: transparent;
+}
+
+.main__headline {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 600;
+  background-color: var(--yellow);
+  margin: 0;
+  padding: .25em;
+  border: 1em solid white;
+}
+.main__description {
+  margin: 0;
+  padding: .5em;
+  text-align: center;
+  background-color: white;
+  font-weight: 300;
+}
+
+.main__featured {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  justify-items: center;
+}
+
+.main__taco {
+  padding-top: 1em 0;
+}
+
+.main__text-wrap {
+  background-color: white;
+  padding: 1em;
+  box-shadow: 2px 2px 2px;
+  justify-self: stretch;
+}
+
+.main__button {
+  font-family: inherit;
+  background-color: var(--yellow);
+  border: none;
+  padding: .5em 1em;
+  box-shadow: 1px 1px 1px;
+}
+
+.main__button:hover {
+  box-shadow: 2px 2px 2px;
+}
+
+.footer {
+  background-color: var(--yellow);
+  display: grid;
+  text-align: center;
+  padding: 1em;
+  gap: .5em;
+}
+
+.footer__copyright {
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+}
+
+.footer__copyright::after {
+  content: "";
+  display: inline-block;
+  width: 10%;
+  height: .5rem;
+  margin-left: 0.5em;
+  background-image: linear-gradient(to right, #f93d66, #6d47d9);
+  
+}
+
+.footer__copyright::before {
+  content: "";
+  display: inline-block;
+  width: 10%;
+  height: .5rem;                      
+  margin-right: 0.5em;
+  background-image: linear-gradient(to left, #f93d66, #6d47d9);
+  vertical-align: middle;
+}
+
+.footer__link {
+  color: black;
+  text-decoration: none;
+}
+
