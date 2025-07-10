@@ -7,8 +7,13 @@ img {
   max-width: 100%;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 a:hover {
-  opacity: 70%;
+  text-decoration: underline;
 }
 
 :root {
@@ -35,6 +40,11 @@ body {
   width: 90%;
   margin: 0 auto;
   padding: 1em;
+  max-width: 1200px;
+}
+
+.header__container {
+  padding: 0 1em 0
 }
 
 .nav__wrapper {
@@ -48,7 +58,7 @@ body {
 
 .nav__logo {
   justify-self: start;
-  width: 60px;
+  width: 80px;
 }
 
 .nav__burger {
@@ -56,7 +66,12 @@ body {
   justify-self: end;
   background-color: transparent;
   border: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+.nav__burger[aria-expanded="true"]  {
+  transform: rotate(90deg);
 }
 
 .nav__list {
@@ -101,6 +116,9 @@ body {
 .hero {
   display: grid;
   gap: .5em;
+  grid-template-areas: "image"
+                       "tacos"
+                       "kombucha";
 }
 
 .hero__image {
@@ -108,14 +126,14 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top right;
-  min-height: 200px;
+  min-height: clamp(200px, calc(100px + 25vw), 460px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding-left: 1em;
   gap: 0.25em;
-    box-shadow: 2px 2px 2px;
+  box-shadow: 2px 2px 2px;
 }
 
 
@@ -123,11 +141,13 @@ body {
 .hero__headline {
   background-color: var(--yellow);
   margin: 0;
+  font-size: clamp(1rem, calc(1rem + 3vw), 4rem) ;
 }
 
 .hero__subheadline {
   background-color: var(--yellow);
   margin: 0;
+  font-size: clamp(.5rem, calc(.5rem + 2vw), 3rem) ;
 }
 
 .hero__ad {
@@ -137,23 +157,27 @@ body {
   justify-items: center;
   align-content: center;
   padding: 1em;
-    box-shadow: 2px 2px 2px;
+  box-shadow: 2px 2px 2px;
 }
 
 .hero__price {
-  margin: 0;
-  padding: 0;
   font-weight: 700;
   font-size: 2em;
 }
 
 .hero__food {
-  margin: 0;
-  padding: 0;
+  font-weight: 500;
 }
 
 .main {
   display: grid;
+  gap: 2em;
+}
+
+.main__usps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  justify-content: center;
   gap: 2em;
 }
 
@@ -165,7 +189,6 @@ body {
 .main__emoji {
   text-align: center;
   font-size: 3em;
-  margin: 0;
   padding: .125em;
   background-color: transparent;
 }
@@ -175,12 +198,10 @@ body {
   font-size: 1.125rem;
   font-weight: 600;
   background-color: var(--yellow);
-  margin: 0;
   padding: .25em;
   border: 1em solid white;
 }
 .main__description {
-  margin: 0;
   padding: .5em;
   text-align: center;
   background-color: white;
@@ -192,6 +213,11 @@ body {
   grid-template-columns: 1fr;
   gap: 1em;
   justify-items: center;
+  grid-column: 1 / -1;
+}
+
+.main__featured-description {
+  text-align: left;
 }
 
 .main__taco {
@@ -226,8 +252,6 @@ body {
 }
 
 .footer__copyright {
-  padding: 0;
-  margin: 0;
   font-weight: 500;
 }
 
@@ -256,3 +280,39 @@ body {
   text-decoration: none;
 }
 
+@media (min-width: 600px) {
+  .hero {
+    grid-template: "image image"    auto
+                   "tacos kombucha" auto
+                                    / 1fr 1fr;                         
+  }
+
+  .hero__image {
+    grid-area: image;
+    background-position: center right;
+  }
+}
+
+@media (min-width: 900px) {
+  @media (min-width: 900px) {
+  .nav__list {
+    max-height: none;
+    display: grid;
+  }
+
+  .nav__item {
+    max-height: none;
+    transform: rotateX(0);
+    display: grid;
+  }
+
+  .nav__burger {
+    display: none;
+  }
+}
+
+  .nav__logo {
+    width: 100px;
+  }
+
+}
